@@ -1,0 +1,26 @@
+<button type="button" routerLink="/product/add">Thêm sản phẩm</button>
+<div class="table-responsive">
+  <table class="table table-striqed table-sm">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tiêu đề</th>
+        <th>giá</th>
+        <th>Mô tả</th>
+        <th>Tác giả</th>
+        <th>Hành dộng</th>
+      </tr>
+    </thead>
+    <tbody>
+              <tr *ngFor="let product of product">
+                        <td>{{product.id}}</td>
+                        <td>{{product.title}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.desc}}</td>
+                        <td>{{product.author}}</td>
+                        <button class="btn btn-info ms-2" routerLink="/product/{{product.id}}/edit">Sửa</button>
+                        <button class="btn btn-info ms-2" (click)="removeItem(product.id)">Xóa</button>
+              </tr>
+    </tbody>
+  </table>
+</div>
